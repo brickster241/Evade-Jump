@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField]
     private Transform player;
     private Vector3 tempPosition;
     private float maxAbsX = 60f;
