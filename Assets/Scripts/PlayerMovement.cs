@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 10f;
+    private float moveSpeed = 15f;
     [SerializeField]
-    private float jumpForce = 10f;
-
+    private float jumpForce = 12.5f;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator anim;
@@ -16,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private string GROUND_TAG = "Ground";
     private float movementX;
     private bool isGrounded = false;
+    private float maxAbsX = 69f;
 
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +39,11 @@ public class PlayerMovement : MonoBehaviour
         // Returns 1, -1 or 0
         movementX = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * moveSpeed;
+        if (transform.position.x > maxAbsX || transform.position.x < -maxAbsX) {
+            Vector3 tempPos = transform.position;
+            tempPos.x = transform.position.x >= 0 ? maxAbsX : -maxAbsX;
+            transform.position = tempPos;
+        }
     }
 
     void AnimatePlayer() {
