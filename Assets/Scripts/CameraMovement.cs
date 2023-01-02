@@ -14,6 +14,8 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        if (!player)
+            return;
         tempPosition = transform.position;
         if (player.position.x > 0) {
             tempPosition.x = Mathf.Min(maxAbsX, player.position.x);

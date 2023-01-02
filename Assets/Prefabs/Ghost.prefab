@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3411631176080180154}
   - component: {fileID: 3411631176080180155}
   - component: {fileID: 3411631176080180157}
-  - component: {fileID: 3411631176080180159}
+  - component: {fileID: 227926191461169397}
   - component: {fileID: 3411631176080180156}
   - component: {fileID: 2243044660706222044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -108,8 +108,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &3411631176080180159
-BoxCollider2D:
+--- !u!70 &227926191461169397
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,19 +121,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.93, y: 2.2}
-    newSize: {x: 0.93, y: 2.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.93, y: 2.2}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0.071881056}
+  m_Size: {x: 0.93, y: 2.0562377}
+  m_Direction: 0
 --- !u!50 &3411631176080180156
 Rigidbody2D:
   serializedVersion: 4

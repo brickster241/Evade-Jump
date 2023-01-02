@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private string WALK_ANIMATION = "walk";
     private string GROUND_TAG = "Ground";
+    private string ENEMY_TAG = "Enemy";
     private float movementX;
     private bool isGrounded = false;
     private float maxAbsX = 69f;
@@ -73,6 +74,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == GROUND_TAG) {
             isGrounded = true;
             Debug.Log("Touching the Ground.");
+        }
+
+        if (collision.gameObject.tag == ENEMY_TAG) {
+            // Game Over
+            Destroy(gameObject);
         }
     }
 }
