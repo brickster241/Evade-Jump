@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    private string GAMEPLAY = "Gameplay";
     public void PlayGameOnButtonClick() {
-        Debug.Log("Button was pressed.");
-        SceneManager.LoadScene("Gameplay");
+        int clickedPlayerIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+        GameManager.instance.CharIndex = clickedPlayerIndex;
+        SceneManager.LoadScene(GAMEPLAY);
     }
 }

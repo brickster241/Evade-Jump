@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     private Vector3 tempPosition;
     private float maxAbsX = 60f;
 
-    void Awake() {
+    void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     // Update is called once per frame
